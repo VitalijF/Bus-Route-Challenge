@@ -3,7 +3,6 @@ package com.vitaliif.busroutechalange.graph;
 import com.vitaliif.busroutechalange.service.BusStationValidator;
 import com.vitaliif.busroutechalange.service.OrientedGraphReader;
 import com.vitaliif.busroutechalange.service.PropertyHolder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;

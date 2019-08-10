@@ -2,6 +2,8 @@ package com.vitaliif.busroutechalange.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class BusRoadResponse {
 
     @JsonProperty(value = "dep_sid")
@@ -38,11 +40,26 @@ public class BusRoadResponse {
         this.arrSid = arrSid;
     }
 
-    public boolean isDirectBusRoad() {
+    public boolean getDirectBusRoad() {
         return directBusRoad;
     }
 
     public void setDirectBusRoad(boolean directBusRoad) {
         this.directBusRoad = directBusRoad;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BusRoadResponse that = (BusRoadResponse) o;
+        return depSid == that.depSid &&
+                arrSid == that.arrSid &&
+                directBusRoad == that.directBusRoad;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(depSid, arrSid, directBusRoad);
     }
 }

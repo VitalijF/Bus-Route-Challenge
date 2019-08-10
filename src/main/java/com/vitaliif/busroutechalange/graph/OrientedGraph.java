@@ -1,17 +1,6 @@
 package com.vitaliif.busroutechalange.graph;
 
-import com.vitaliif.busroutechalange.service.BusStationValidator;
-import com.vitaliif.busroutechalange.service.GraphRoadFinder;
-import com.vitaliif.busroutechalange.service.OrientedGraphReader;
-import com.vitaliif.busroutechalange.service.impl.BFSGraphRoadFinder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class OrientedGraph {
 
@@ -32,5 +21,18 @@ public class OrientedGraph {
             destinationVertexes.add(destinationVertex);
             return destinationVertexes;
         }).add(destinationVertex);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrientedGraph that = (OrientedGraph) o;
+        return Objects.equals(graph, that.graph);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(graph);
     }
 }
