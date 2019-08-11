@@ -66,4 +66,13 @@ public class BusRoadResponse {
     public int hashCode() {
         return Objects.hash(depSid, arrSid, directBusRoad);
     }
+
+    @Override
+    public String toString() {
+        return "BusRoadResponse{" +
+                "depSid=" + depSid +
+                ", arrSid=" + arrSid +
+                ", directBusRoad=" + directBusRoad +
+                '}';
+    }
 }

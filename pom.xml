@@ -9,8 +9,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.vitaliif</groupId>
-    <artifactId>bus-route-chalange</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>bus-route-challenge</artifactId>
+    <version>0.1</version>
     <name>bus-route-challenge</name>
     <description>Bus route challenge</description>
 
@@ -23,6 +23,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -12,5 +12,6 @@ public class ErrorResponseTest {
         Assert.assertThat(ErrorResponse.class, BeanMatchers.hasValidGettersAndSetters());
         Assert.assertThat(ErrorResponse.class, BeanMatchers.hasValidBeanEquals());
         Assert.assertThat(ErrorResponse.class, BeanMatchers.hasValidBeanHashCode());
+        Assert.assertThat(ErrorResponse.class, BeanMatchers.hasValidBeanToString());
     }
 }

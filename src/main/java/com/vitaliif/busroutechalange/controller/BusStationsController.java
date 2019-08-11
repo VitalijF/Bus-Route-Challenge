@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping("/api")
 public class BusStationsController {
@@ -22,12 +24,13 @@ public class BusStationsController {
      *
      * @param depSid the given dep sid
      * @param arrSid the given arr sid
-     * @return @see com.vitaliif.busroutechalange.dto.BusRoadResponse result which contains information about
-     * road existing between provided sids
+     * @param request HttpServlet request
+     * @return result which contains information about road existing between provided sids
      */
     @GetMapping("/direct")
     public BusRoadResponse findRoadBetweenTwoStations(@RequestParam(value = "dep_sid") int depSid,
-                                                      @RequestParam(value = "arr_sid") int arrSid) {
+                                                      @RequestParam(value = "arr_sid") int arrSid,
+                                                      HttpServletRequest request) {
         return busRoadChecker.checkRoadExisting(depSid, arrSid);
     }
 

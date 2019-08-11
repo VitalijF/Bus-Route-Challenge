@@ -11,6 +11,6 @@ public class BusRoadResponseTest {
         Assert.assertThat(BusRoadResponse.class, BeanMatchers.hasValidBeanConstructor());
         Assert.assertThat(BusRoadResponse.class, BeanMatchers.hasValidGettersAndSetters());
         Assert.assertThat(BusRoadResponse.class, BeanMatchers.hasValidBeanEquals());
-        Assert.assertThat(BusRoadResponse.class, BeanMatchers.hasValidBeanHashCode());
+        Assert.assertThat(BusRoadResponse.class, BeanMatchers.hasValidBeanToString());
     }
 }

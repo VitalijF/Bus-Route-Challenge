@@ -1,4 +1,4 @@
-package com.vitaliif.busroutechalange.dto;
+package com.vitaliif.busroutechalange.service.impl;
 
 import com.vitaliif.busroutechalange.graph.OrientedGraph;
 import com.vitaliif.busroutechalange.service.impl.BFSGraphRoadFinder;

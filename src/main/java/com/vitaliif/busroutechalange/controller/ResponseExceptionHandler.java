@@ -20,4 +20,12 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
 
     }
 
+    @ExceptionHandler(value = IllegalStateException.class)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    @ResponseBody
+    public ErrorResponse handleIllegalStateException(IllegalStateException e) {
+        return new ErrorResponse(e.getMessage());
+
+    }
+
 }

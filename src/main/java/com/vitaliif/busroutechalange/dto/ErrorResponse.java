@@ -36,4 +36,11 @@ public class ErrorResponse {
     public int hashCode() {
         return Objects.hash(errorMessage);
     }
+
+    @Override
+    public String toString() {
+        return "ErrorResponse{" +
+                "errorMessage='" + errorMessage + '\'' +
+                '}';
+    }
 }

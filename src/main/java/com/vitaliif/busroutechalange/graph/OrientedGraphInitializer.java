@@ -1,10 +1,12 @@
 package com.vitaliif.busroutechalange.graph;
 
+import com.vitaliif.busroutechalange.exception.IllegalBusStationFileException;
 import com.vitaliif.busroutechalange.service.BusStationValidator;
 import com.vitaliif.busroutechalange.service.OrientedGraphReader;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.naming.OperationNotSupportedException;
 import java.io.IOException;
 
 @Component
@@ -29,6 +31,9 @@ public class OrientedGraphInitializer {
     }
 
     public OrientedGraph getOrientedGraph() {
+        if (orientedGraph == null) {
+            throw new IllegalStateException("Graph is not initialized");
+        }
         return orientedGraph;
     }
 }

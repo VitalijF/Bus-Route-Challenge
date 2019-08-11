@@ -46,15 +46,14 @@ public class OrientedGraphInitializerTest {
         Assert.assertEquals(constructExpectedGraph(), orientedGraph);
     }
 
-    @Test
+    @Test(expected = IllegalStateException.class)
     public void testInitializationFromInvalidFile() throws IOException {
         graphInitializer.initialize();
 
         Mockito.verify(validator, Mockito.times(1)).isValid();
         Mockito.verify(orientedGraphReader, Mockito.never()).initialize();
-        OrientedGraph orientedGraph = graphInitializer.getOrientedGraph();
+        graphInitializer.getOrientedGraph();
 
-        Assert.assertNull(orientedGraph);
     }
 
     @Test(expected = RuntimeException.class)
