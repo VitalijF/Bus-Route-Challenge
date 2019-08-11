@@ -1,12 +1,10 @@
 package com.vitaliif.busroutechalange.graph;
 
-import com.vitaliif.busroutechalange.exception.IllegalBusStationFileException;
 import com.vitaliif.busroutechalange.service.BusStationValidator;
 import com.vitaliif.busroutechalange.service.OrientedGraphReader;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import javax.naming.OperationNotSupportedException;
 import java.io.IOException;
 
 @Component

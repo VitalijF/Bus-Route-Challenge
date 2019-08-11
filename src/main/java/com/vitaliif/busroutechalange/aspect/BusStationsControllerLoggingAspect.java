@@ -26,7 +26,6 @@ public class BusStationsControllerLoggingAspect {
     protected void allMethods() {
     }
 
-
     @Before("restController() && allMethods() && args(..,request)")
     public void logBefore(HttpServletRequest request) {
         LOGGER.info(String.format(
@@ -42,7 +41,6 @@ public class BusStationsControllerLoggingAspect {
         LOGGER.info(String.format("Request has been processed. Response: [%s]", response)
         );
     }
-
 
     private String extractStringForLogFromRequest(HttpServletRequest request) {
         return request.getParameterMap().entrySet().stream()
