@@ -2,7 +2,7 @@
 
 ## Project structure
  
-###Project contains few packages:
+### Project contains few packages:
 
 - aspect
   * __BusStationsControllerLoggingAspect__ - logging logic for __BusStationsController__
