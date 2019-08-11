@@ -5,26 +5,26 @@
 ###Project contains few packages:
 
 - aspect
-  * [BusStationsControllerLoggingAspect]() - logging logic for [BusStationsController]()
-  * [BusStationsFileValidatorLoggingAspect]() - logging logic for [BusStationsFileValidator]()
-  * [FileOrientedGraphReaderLoggingAspect]() - logging logic for [FileOrientedGraphReader]()
+  * __BusStationsControllerLoggingAspect__ - logging logic for __BusStationsController__
+  * __BusStationsFileValidatorLoggingAspect__ - logging logic for __BusStationsFileValidator__
+  * __FileOrientedGraphReaderLoggingAspect__ - logging logic for __FileOrientedGraphReader__
 - controller
-   * [BusStationsController]() - main controller
-   * [ResponseExceptionHandler]() - controller advice
+   * __BusStationsController__ - main controller
+   * __ResponseExceptionHandler__ - controller advice
 - dto
-    * [BusRoadResponse]() - response object which uses for [BusStationsController](). Contains  `dep_sid`, `arr_sid` 
+    * __BusRoadResponse__ - response object which uses for __BusStationsController__. Contains  `dep_sid`, `arr_sid` 
     and `direct_bus_road` which says if road exist or not
-    * [ErrorResponse]() - response object which uses for controller advice. Contains error message
+    * __ErrorResponse__ - response object which uses for controller advice. Contains error message
 - exception
-    * [IllegalBusStationFileException]() - Custom exception which uses for file reading and validation
+    * __IllegalBusStationFileException__ - Custom exception which uses for file reading and validation
 - graph
-    * [OrientedGraph]() - graph of bus stations which uses for road searching
-    * [OrientedGraphInitializer]() - graph initializer
+    * __OrientedGraph__ - graph of bus stations which uses for road searching
+    * __OrientedGraphInitializer__ - graph initializer
 - service
-    * [BFSGraphRoadFinder]() - component which uses BFS algorithm for searching a way between two vertexes
-    * [BusRoadCheckerImpl]() - main service which uses [BFSGraphRoadFinder]() for inputted params and construct response
-    * [BusStationsFileValidator]() - component which validates inputted file with bus stations by validation rules which
+    * __BFSGraphRoadFinder__ - component which uses BFS algorithm for searching a way between two vertexes
+    * __BusRoadCheckerImpl__ - main service which uses __BFSGraphRoadFinder__ for inputted params and construct response
+    * __BusStationsFileValidator__ - component which validates inputted file with bus stations by validation rules which
     specified in properties
-    * [OrientedGraphFileReader]() - component which reads bus stations matrix and convert it into [OrientedGraph]()
-    * [PropertyHolder]() - component which contains all application properties
+    * __OrientedGraphFileReader__ - component which reads bus stations matrix and convert it into __OrientedGraph__
+    * __PropertyHolder__ - component which contains all application properties
 
