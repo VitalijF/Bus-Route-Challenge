@@ -39,7 +39,7 @@ public class BusStationsFileValidatorLoggingAspect {
         ));
     }
 
-    @AfterThrowing(value = "execution(* com.vitaliif.busroutechalange.service.impl.FileOrientedGraphReader.initialize()))",
+    @AfterThrowing(value = "execution(* com.vitaliif.busroutechalange.service.impl.OrientedGraphFileReader.initialize()))",
             throwing = "exception")
     public void logging(IllegalBusStationFileException exception) {
         LOGGER.error(exception.getMessage(), exception);

@@ -24,7 +24,7 @@ public class FileOrientedGraphReaderLoggingAspect
         this.pathToFile = pathToFile;
     }
 
-    @Before("execution(* com.vitaliif.busroutechalange.service.impl.FileOrientedGraphReader.initialize()))")
+    @Before("execution(* com.vitaliif.busroutechalange.service.impl.OrientedGraphFileReader.initialize()))")
     public void logBeforeFileInitialization() {
         LOGGER.info(String.format(
                 "Start extracting oriented graph from file. Path [%s]",
@@ -32,7 +32,7 @@ public class FileOrientedGraphReaderLoggingAspect
         ));
     }
 
-    @After("execution(* com.vitaliif.busroutechalange.service.impl.FileOrientedGraphReader.initialize()))")
+    @After("execution(* com.vitaliif.busroutechalange.service.impl.OrientedGraphFileReader.initialize()))")
     public void logAfterFileInitialization() {
         LOGGER.info(String.format(
                 "File initialization has been successfully completed and mapped to oriented graph. Path [%s]",
@@ -40,7 +40,7 @@ public class FileOrientedGraphReaderLoggingAspect
         ));
     }
 
-    @AfterThrowing(value = "execution(* com.vitaliif.busroutechalange.service.impl.FileOrientedGraphReader.initialize()))",
+    @AfterThrowing(value = "execution(* com.vitaliif.busroutechalange.service.impl.OrientedGraphFileReader.initialize()))",
             throwing = "exception")
     public void logging(IOException exception) {
         LOGGER.error(String.format(

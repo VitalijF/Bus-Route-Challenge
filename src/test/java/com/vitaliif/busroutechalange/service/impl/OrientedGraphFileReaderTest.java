@@ -9,14 +9,14 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.io.IOException;
 
 @RunWith(MockitoJUnitRunner.class)
-public class FileOrientedGraphReaderTest {
+public class OrientedGraphFileReaderTest {
 
     @Test
     public void testInitializationCorrectFile() throws IOException {
-        final FileOrientedGraphReader fileOrientedGraphReader =
-                new FileOrientedGraphReader("src/test/resources/busStations/valid/threeRoads.txt");
+        final OrientedGraphFileReader orientedGraphFileReader =
+                new OrientedGraphFileReader("src/test/resources/busStations/valid/threeRoads.txt");
 
-        OrientedGraph actualGraph = fileOrientedGraphReader.initialize();
+        OrientedGraph actualGraph = orientedGraphFileReader.initialize();
         OrientedGraph expectedGraph = generateExpectedGraph();
 
         Assert.assertNotNull(actualGraph);
@@ -26,9 +26,9 @@ public class FileOrientedGraphReaderTest {
 
     @Test(expected = IOException.class)
     public void testInitializationIncorrectFile() throws IOException {
-        final FileOrientedGraphReader fileOrientedGraphReader =
-                new FileOrientedGraphReader("src/test/resources/busStations/wrong/invalid.txt");
-        fileOrientedGraphReader.initialize();
+        final OrientedGraphFileReader orientedGraphFileReader =
+                new OrientedGraphFileReader("src/test/resources/busStations/wrong/invalid.txt");
+        orientedGraphFileReader.initialize();
     }
 
     private static OrientedGraph generateExpectedGraph() {

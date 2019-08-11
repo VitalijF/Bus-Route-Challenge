@@ -13,11 +13,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 @Component
-public class FileOrientedGraphReader implements OrientedGraphReader {
+public class OrientedGraphFileReader implements OrientedGraphReader {
 
     private String pathToBusStationsFile;
 
-    public FileOrientedGraphReader(@Value("${file.busStations.path}") String pathToBusStationsFile) {
+    public OrientedGraphFileReader(@Value("${file.busStations.path}") String pathToBusStationsFile) {
         this.pathToBusStationsFile = pathToBusStationsFile;
     }
 
