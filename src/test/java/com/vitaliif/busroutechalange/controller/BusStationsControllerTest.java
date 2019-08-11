@@ -81,6 +81,27 @@ public class BusStationsControllerTest {
         Assert.assertEquals(expectedResponse, actualResponse);
     }
 
+    @Test
+    public void testIllegalStateException() throws Exception {
+        Mockito.when(busRoadChecker.checkRoadExisting(Mockito.anyInt(), Mockito.anyInt()))
+                .thenThrow(new IllegalStateException("Graph is not initialized"));
+
+        final String responseAsString = mockMvc.perform(MockMvcRequestBuilders.get(URL)
+                .param("dep_sid", "1")
+                .param("arr_sid", "2")
+                .contentType(MediaType.APPLICATION_JSON)
+        )
+                .andExpect(MockMvcResultMatchers.status().isUnprocessableEntity())
+                .andReturn().getResponse().getContentAsString();
+
+
+        final ErrorResponse actualResponse = TestHelper.convertToObjectFromStringJson(responseAsString, ErrorResponse.class);
+        final ErrorResponse expectedResponse = new ErrorResponse("Graph is not initialized");
+
+        Assert.assertNotNull(actualResponse);
+        Assert.assertEquals(expectedResponse, actualResponse);
+    }
+
     private static BusRoadResponse createSuccessResponse() {
         return new BusRoadResponse(1, 2, true);
     }
