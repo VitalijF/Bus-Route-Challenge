@@ -1,7 +1,6 @@
 package com.vitaliif.busroutechalange.service.impl;
 
 import com.vitaliif.busroutechalange.graph.OrientedGraph;
-import com.vitaliif.busroutechalange.service.impl.BFSGraphRoadFinder;
 import org.junit.Assert;
 import org.junit.Test;
 
