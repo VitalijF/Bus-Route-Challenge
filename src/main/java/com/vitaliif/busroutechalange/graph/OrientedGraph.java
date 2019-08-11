@@ -4,7 +4,6 @@ import java.util.*;
 
 public class OrientedGraph {
 
-
     private final Map<Integer, Set<Integer>> graph;
 
     public OrientedGraph() {

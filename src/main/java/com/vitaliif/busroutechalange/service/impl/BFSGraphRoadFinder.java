@@ -9,6 +9,16 @@ import java.util.*;
 @Component
 public class BFSGraphRoadFinder implements GraphRoadFinder {
 
+    /**
+     * Check if road between two vertexes exists for provided oriented graph. For searching uses BFS algorithm
+     *
+     * @param graph oriented graph
+     * @param sourceVertex start vertex
+     * @param destinationVertex destination vertex
+     * @return true - if road exist, otherwise - false
+     *
+     *
+     */
     @Override
     public boolean isRoadExist(final OrientedGraph graph, final int sourceVertex, final int destinationVertex) {
 

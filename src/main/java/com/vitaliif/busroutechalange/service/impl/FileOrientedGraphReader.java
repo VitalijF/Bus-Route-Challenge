@@ -29,6 +29,7 @@ public class FileOrientedGraphReader implements OrientedGraphReader {
 
 
         try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
+
             //Skip first line
             reader.readLine();
 

@@ -17,6 +17,14 @@ public class BusStationsController {
         this.busRoadChecker = busRoadChecker;
     }
 
+    /**
+     *  Receives the `dep id` and `sid id` and find if destination between sids exist
+     *
+     * @param depSid the given dep sid
+     * @param arrSid the given arr sid
+     * @return @see com.vitaliif.busroutechalange.dto.BusRoadResponse result which contains information about
+     * road existing between provided sids
+     */
     @GetMapping("/direct")
     public BusRoadResponse findRoadBetweenTwoStations(@RequestParam(value = "dep_sid") int depSid,
                                                       @RequestParam(value = "arr_sid") int arrSid) {
