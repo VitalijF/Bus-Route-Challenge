@@ -22,7 +22,7 @@ public class BFSGraphRoadFinder implements GraphRoadFinder {
     @Override
     public boolean isRoadExist(final OrientedGraph graph, final int sourceVertex, final int destinationVertex) {
 
-        final Map<Integer, Set<Integer>> orientedGraph = graph.getGraph();
+        final Map<Integer, List<Integer>> orientedGraph = graph.getGraph();
 
         // Declare map which will contain visitedVertexes
         final Map<Integer, Boolean> visitedVertexes = new HashMap<>();
@@ -39,16 +39,11 @@ public class BFSGraphRoadFinder implements GraphRoadFinder {
             //Poll vertex from queue
             int currentVertex = candidatesForVising.poll();
 
-            final Set<Integer> subVertexes = orientedGraph.get(currentVertex);
+            final List<Integer> subVertexes = orientedGraph.get(currentVertex);
 
             //Skip iteration when vertex has no childes
             if (subVertexes == null) {
                 continue;
-            }
-
-            // If one of sub vertex equals with destination then road exists
-            if (subVertexes.contains(destinationVertex)) {
-                return true;
             }
 
             // Go through all sub vertexes
@@ -56,6 +51,11 @@ public class BFSGraphRoadFinder implements GraphRoadFinder {
 
                 // Check if current sub vertex was been visited
                 if (visitedVertexes.get(currentSubVertex) != Boolean.TRUE) {
+
+                    // If current subVertex vertex equals with destination then road exists
+                    if (currentSubVertex == destinationVertex) {
+                        return true;
+                    }
 
                     visitedVertexes.put(currentVertex, true);
 

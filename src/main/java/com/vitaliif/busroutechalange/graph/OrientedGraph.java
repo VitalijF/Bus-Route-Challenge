@@ -4,22 +4,23 @@ import java.util.*;
 
 public class OrientedGraph {
 
-    private final Map<Integer, Set<Integer>> graph;
+    private final Map<Integer, List<Integer>> graph;
 
     public OrientedGraph() {
         graph = new HashMap<>();
     }
 
-    public Map<Integer, Set<Integer>> getGraph() {
+    public Map<Integer, List<Integer>> getGraph() {
         return graph;
     }
 
     public void addArc(int sourceVertex, int destinationVertex) {
-        graph.computeIfAbsent(sourceVertex, key -> {
-            final Set<Integer> destinationVertexes = new HashSet<>();
-            destinationVertexes.add(destinationVertex);
-            return destinationVertexes;
-        }).add(destinationVertex);
+        if (graph.get(sourceVertex) == null) {
+            graph.put(sourceVertex, new ArrayList<>(Collections.singletonList(destinationVertex)));
+        } else {
+            graph.get(sourceVertex).add(destinationVertex);
+
+        }
     }
 
     @Override
