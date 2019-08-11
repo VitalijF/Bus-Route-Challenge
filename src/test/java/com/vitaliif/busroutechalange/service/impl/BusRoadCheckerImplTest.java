@@ -8,7 +8,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -37,18 +36,18 @@ public class BusRoadCheckerImplTest {
         final BusRoadResponse actualResponse = busRoadChecker.checkRoadExisting(1, 2);
 
         Assert.assertNotNull(actualResponse);
-        Assert.assertEquals(actualResponse, expectedResponse);
+        Assert.assertEquals(expectedResponse, actualResponse);
     }
 
     @Test
     public void testBusRoadNotExist() {
-        Mockito.when(graphRoadFinder.isRoadExist(new OrientedGraph(), 1,2)).thenReturn(false);
+        Mockito.when(graphRoadFinder.isRoadExist(new OrientedGraph(), 1, 2)).thenReturn(false);
 
         final BusRoadResponse expectedResponse = generateExpectedResponse(false);
         final BusRoadResponse actualResponse = busRoadChecker.checkRoadExisting(1, 2);
 
         Assert.assertNotNull(actualResponse);
-        Assert.assertEquals(actualResponse, expectedResponse);
+        Assert.assertEquals(expectedResponse, actualResponse);
     }
 
     private static BusRoadResponse generateExpectedResponse(final boolean directBusRoad) {

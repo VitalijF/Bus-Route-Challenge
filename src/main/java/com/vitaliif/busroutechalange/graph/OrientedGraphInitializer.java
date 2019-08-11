@@ -2,7 +2,6 @@ package com.vitaliif.busroutechalange.graph;
 
 import com.vitaliif.busroutechalange.service.BusStationValidator;
 import com.vitaliif.busroutechalange.service.OrientedGraphReader;
-import com.vitaliif.busroutechalange.service.PropertyHolder;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -17,7 +16,7 @@ public class OrientedGraphInitializer {
     private final OrientedGraphReader orientedGraphReader;
 
 
-    public OrientedGraphInitializer(BusStationValidator validator, OrientedGraphReader orientedGraphReader, PropertyHolder propertyHolder) {
+    public OrientedGraphInitializer(BusStationValidator validator, OrientedGraphReader orientedGraphReader) {
         this.validator = validator;
         this.orientedGraphReader = orientedGraphReader;
     }

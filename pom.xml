@@ -11,8 +11,8 @@
     <groupId>com.vitaliif</groupId>
     <artifactId>bus-route-chalange</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>bus-route-chalange</name>
-    <description>Bus route chalange</description>
+    <name>bus-route-challenge</name>
+    <description>Bus route challenge</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -49,10 +49,7 @@
             <scope>test</scope>
         </dependency>
 
-
     </dependencies>
-
-
 
     <build>
         <plugins>

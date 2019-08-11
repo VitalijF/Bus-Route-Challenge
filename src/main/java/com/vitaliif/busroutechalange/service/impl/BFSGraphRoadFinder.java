@@ -29,15 +29,22 @@ public class BFSGraphRoadFinder implements GraphRoadFinder {
             //Poll vertex from queue
             int currentVertex = candidatesForVising.poll();
 
+            final Set<Integer> subVertexes = orientedGraph.get(currentVertex);
+
+            //Skip iteration when vertex has no childes
+            if (subVertexes == null) {
+                continue;
+            }
+
+            // If one of sub vertex equals with destination then road exists
+            if (subVertexes.contains(destinationVertex)) {
+                return true;
+            }
+
             // Go through all sub vertexes
-            for (int currentSubVertex : orientedGraph.get(currentVertex)) {
+            for (int currentSubVertex : subVertexes) {
 
-                // If current sub vertex equals with destination then road exists
-                if (currentSubVertex == destinationVertex) {
-                    return true;
-                }
-
-                // Otherwise - check if current sub vertex was been visited
+                // Check if current sub vertex was been visited
                 if (visitedVertexes.get(currentSubVertex) != Boolean.TRUE) {
 
                     visitedVertexes.put(currentVertex, true);
